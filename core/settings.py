@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-$h+ue8ms%a(s%el^evdl!_j%+2_itvu%t^frfi3*xpn7nyb^tp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "buzz-talk-api.eu-west-3.elasticbeanstalk.com",
+    "127.0.0.1"
+]
 
 
 # Application definition
