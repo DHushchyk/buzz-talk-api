@@ -38,13 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts",
     "storages",
-    "corsheaders"
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -158,4 +156,4 @@ if "AWS_STORAGE_BUCKET_NAME" in os.environ:
     AWS_DEFAULT_ACL = "public-read-write"
 
 
-CORS_ALLOWED_ORIGINS = ["*"]
+# CORS_ALLOWED_ORIGINS = ["*"]
