@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'buzz_talk_api.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
