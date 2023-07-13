@@ -27,3 +27,14 @@ class UserRegisterTests(APITestCase):
         self.assertEqual(request.status_code, status.HTTP_201_CREATED)
         self.assertEqual(users_after - users_before, 1)
         self.assertTrue(User.objects.filter(username="test_username").exists())
+
+    def test_wrong_password_confirm(self):
+        TEST_USER_DATA["confirm_password"] = "sdfgdbaerawe"
+        request = self.client.post(USER_REGISTER_URL, TEST_USER_DATA)
+
+        self.assertEqual(request.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(
+            request.data,
+            {"password": ["Password fields didn't match."]}
+        )
+        self.assertFalse(User.objects.filter(username="test_username").exists())
