@@ -92,11 +92,11 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": os.getenv("DB_PSQL_NAME"),
-            "USER": os.getenv("DB_PSQL_USER"),
-            "PASSWORD": os.getenv("DB_PSQL_PASSWORD"),
-            "HOST": os.getenv("DB_PSQL_HOST"),
-            "PORT": os.getenv("DB_PSQL_PORT"),
+            "NAME": "chat_api_db",
+            "USER": "chat_api_admin",
+            "PASSWORD": "OB9hh$r19SxY9fGmky$L",
+            "HOST": "localhost",
+            "PORT": 5432,
         }
     }
 
@@ -144,6 +144,12 @@ MEDIA_ROOT = BASE_DIR.joinpath("media")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
+}
 
 
 if "AWS_STORAGE_BUCKET_NAME" in os.environ:
